@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <title>
+        Practice
+    </title>
+    <body>
+        <h1>Hey there!</h1>
+        <script>
+            let element = document.getElementById('h1');
+            let createelement = document.createElement('p');
+            createelement.textContent = 'Welcome';
+            createelement.id='CE';
+            element.append(createelement);
+            element.prepend(createelement);
+            console.log(createelement);
+        </script>
+    </body>
+        
+</html>

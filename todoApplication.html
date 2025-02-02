@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<title>
+    TodoList
+</title>
+
+<body style="background-color:skyblue;">
+    <h1>TodoList</h1>
+    <ul id="list"></ul>
+    <div>
+        <input id="AddTask" type="text">
+        <button id="button">ADD</button>
+    </div>
+    <h1>Completed</h1>
+    <ul id="Completed" ></ul>
+</body>
+<script>
+    let clickButton = document.getElementById('button');
+    let getId = document.getElementById('list');
+    let addTask = document.getElementById('AddTask');
+    let listArray = new Array();
+    let completedList =document.getElementById('Completed');
+    clickButton.addEventListener('click', () => {
+        if(addTask.value!='')
+    {
+        listArray.push(addTask.value);
+        getId.innerHTML += '<li id="' + (listArray.length - 1) + '"><button onclick="doneList('+(listArray.length - 1)+')">' + addTask.value + '</button></li>';
+        addTask.value = '';
+    }
+    })
+    function doneList(id)
+    {
+       completedList.innerHTML +='<li>'+listArray[id]+'</li>';
+       document.getElementById(id).style.display="none";
+
+    }
+</script>
+
+</html>

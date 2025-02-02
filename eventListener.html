@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <title>
+        Event Listeners
+    </title>
+    <body>
+        <button id="mouse">submit</button>
+        <button id ="keyboard">1</button>
+
+    </body>
+        <script>  
+            let add =document.getElementById('keyboard');
+            let button = document.getElementById('mouse');  
+            button.addEventListener('click',()=>{
+                 button.textContent='submitted';
+            })
+            button.addEventListener('mouseover',()=>{
+                button.textContent='manditory';
+            })
+            button.addEventListener('mouseout',()=>{
+                button.textContent='submit';
+            })
+            document.addEventListener('keydown',()=>{
+                console.log(event.key);
+            if(event.key =='ArrowUp')
+            {
+                add.textContent=Number(add.textContent)+1;
+            }
+            if(event.key =='ArrowDown')
+            {
+                add.textContent =Number(add.textContent)-1;
+            }
+            })
+        </script>
+</html>
